@@ -1,8 +1,11 @@
 // @ts-check
-import { define } from "./decorators.js";
+import { customElement, property } from "./decorators.js";
 
-@define('my-counter')
+@customElement('my-counter')
 export default class MyCounter extends HTMLElement {
+  @property(Boolean) checked = false;
+  @property(String) theme;
+  
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
